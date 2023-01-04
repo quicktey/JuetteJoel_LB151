@@ -68,21 +68,21 @@ Interface???
 | TC-№ | Vorbereitung       | Eingabe                                                          | Erwartete Ausgabe                                               |
 | ---- | ------------------ | ---------------------------------------------------------------- | --------------------------------------------------------------- |
 | 1.1  | Webseite ist geöffnet, Administrator möchte sich einloggen | 1. Administrator gibt richtige Benutzerdaten ein| 2. Benutzer wird eingeloggt              |
-| 1.2  | Webseite ist geöffnet, Administrator möchte sich einloggen | 1. Administrator gibt falsche Benutzerdaten ein| 2. Benutzer wird nichteingeloggt          |
+| 1.2  | Webseite ist geöffnet, Administrator möchte sich einloggen | 1. Administrator gibt falsche Benutzerdaten ein| 2. Benutzer wird nicht eingeloggt          |
 | 2.1  | Webseite ist geöffnet, Administrator ist eingeloggt | 1. Benutzer legt neues Medium an | 2. Neues Medium befindet sich in der Datenbank                 |
 | 2.2  | Webseite ist geöffnet, Administrator ist eingeloggt | 1. Benutzer löscht ein Medium   | 2. Gelöschtes Medium befindet sich nicht mehr in der Datenbank  |
-| 2.3  | Webseite ist geöffnet, Administrator ist eingeloggt | 1. Benutzer ändert ein medium   | 2. Geändertes Medium befindet sich aktualisiert in der Datenbank |
+| 2.3  | Webseite ist geöffnet, Administrator ist eingeloggt | 1. Benutzer ändert ein Medium   | 2. Geändertes Medium befindet sich aktualisiert in der Datenbank |
 | 3.1  | Webseite ist geöffnet, Administrator ist eingeloggt | 1. Benutzer erstellt eine neue Kategorie | 2. Medien können der Kategorie hinzugefügt werden      |
 | 4.1  | Webseite ist geöffnet, Administrator ist eingeloggt | 1. Benutzer löscht einen Highscore-Listeneintrag | 2. Highscore-Listeneintrag ist nicht mehr vorhanden |
-| 5.1  | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer beendet das Spiel</br>3. Benutzer gibt einen Namen ein  | 2. Benutzer wird aufgefortdert einen Namen einzugeben</br>4. Name erscheint mit Highscore in der Highscore-Liste |
-| 6.1  | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1.                                  | 2. Der Kontoastand wird angezeigt                              |
-| 7.1  | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1.                                  | 2. Die Lebenspunkte werden  angezeigt                          |
-| 8.1  | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer tätigt eine richtige eingabe | 2. Die eingabe wird als richtig dargestellt               |
-| 8.2  | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer tätigt eine falsche eingabe | 2. Die eingabe wird als falsch dargestellt                 |
+| 5.1  | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer beendet das Spiel</br>3. Benutzer gibt einen Namen ein  | 2. Benutzer wird aufgefordert einen Namen einzugeben</br>4. Name erscheint mit Highscore in der Highscore-Liste |
+| 6.1  | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1.                                  | 2. Der Kontostand wird angezeigt                               |
+| 7.1  | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1.                                  | 2. Die Lebenspunkte werden angezeigt                           |
+| 8.1  | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer tätigt eine richtige Eingabe | 2. Die Eingabe wird als richtig dargestellt               |
+| 8.2  | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer tätigt eine falsche Eingabe | 2. Die Eingabe wird als falsch dargestellt                 |
 | 9.1  | Webseite ist geöffnet | 1. Benutzer navigiert zur Highscore-Liste                      | 2. Die Highscore Liste wird nach Rang aufsteigend sortiert     |
-| 10.1 | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer beantwortet ein Medium  | 2. Dieses medium wird dem benutzer nicht mehr angezeigt        |
+| 10.1 | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer beantwortet ein Medium  | 2. Dieses Medium wird dem Benutzer nicht mehr angezeigt        |
 | 11.1 | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer beendet das Spiel | 2. Der Gewinn wird in die Highscore-Liste übertragen                 |
-| 12.1 | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer schliesst eine Runde ab | 2. Die RUnde wird gezählt                                      |
+| 12.1 | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer schliesst eine Runde ab | 2. Die Runde wird gezählt                                      |
 
 Medium steht für Rätsel-Wort und Phrase. 
 
