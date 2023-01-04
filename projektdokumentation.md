@@ -78,9 +78,7 @@ Interface???
 | 2.3  | Webseite ist geöffnet, Administrator ist eingeloggt | 1. Benutzer ändert ein medium   | 2. Geändertes Medium befindet sich aktualisiert in der Datenbank |
 | 3.1  | Webseite ist geöffnet, Administrator ist eingeloggt | 1. Benutzer erstellt eine neue Kategorie | 2. Medien können der Kategorie hinzugefügt werden      |
 | 4.1  | Webseite ist geöffnet, Administrator ist eingeloggt | 1. Benutzer löscht einen Highscore-Listeneintrag | 2. Highscore-Listeneintrag ist nicht mehr vorhanden |
-| 5.1  | Webseite ist geöffnet Benutzer spielt ein Spiel | 1. Benutzer beendet das Spiel
-3. Benutzer gibt einen Namen ein  | 2. Benutzer wird aufgefortdert einen Namen einzugeben
-4. Name erscheint mit Highscore in der Highscore-Liste |
+| 5.1  | Webseite ist geöffnet Benutzer spielt ein Spiel | 1. Benutzer beendet das Spiel</br>3. Benutzer gibt einen Namen ein  | 2. Benutzer wird aufgefortdert einen Namen einzugeben</br>4. Name erscheint mit Highscore in der Highscore-Liste |
 | 6.1  | | 1. | 2. |
 | 7.1  | | 1. | 2. |
 | 8.1  | | 1. | 2. |
