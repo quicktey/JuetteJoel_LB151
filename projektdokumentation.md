@@ -2,15 +2,15 @@
 
 ✍️ Ihr Nachname
 
-| Datum | Version | Zusammenfassung                                              |
-| ----- | ------- | ------------------------------------------------------------ |
-|       | 0.0.1   | ✍️ Jedes Mal, wenn Sie an dem Projekt arbeiten, fügen Sie hier eine neue Zeile ein und beschreiben in *einem* Satz, was Sie erreicht haben. |
-|       | 0.0.2   |                                                              |
-|       | 0.0.3   |                                                              |
-|       | 0.0.4   |                                                              |
-|       | 0.0.5   |                                                              |
-|       | 0.0.6   |                                                              |
-|       | 1.0.0   |                                                              |
+| Datum       | Version | Zusammenfassung                                              |
+| ----------- | ------- | ------------------------------------------------------------ |
+| 04.01.2023  | 0.0.1   | Vorarbeit bhis Aufgabe 6                                     |
+|             | 0.0.2   |                                                              |
+|             | 0.0.3   |                                                              |
+|             | 0.0.4   |                                                              |
+|             | 0.0.5   |                                                              |
+|             | 0.0.6   |                                                              |
+|             | 1.0.0   |                                                              |
 
 # 0 Ihr Projekt
 
