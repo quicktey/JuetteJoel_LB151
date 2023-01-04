@@ -46,8 +46,6 @@ Interface???
 
 # 4.1 User Stories
 
-✍️ Formulieren Sie klare Anforderungen in der Form von User Stories (*„als … möchte ich … damit …“*) und zu jeder Anforderung mindestens einen dazugehörigen Testfall (in Kapitel 4.2). 
-
 ✍️ Formulieren Sie weitere, eigene Anforderungen und Testfälle, wie Sie Ihre Applikation erweitern möchten. Geben Sie diesen statt einer Nummer einen Buchstaben (`A`, `B`, etc.)
 
 | US-№ | Verbindlichkeit | Typ            | Beschreibung                                                                                                          |
@@ -63,9 +61,7 @@ Interface???
 | 9    | Muss            | Funktional     | Als System möchte ich die Highscore-Listen-Ränge den Geldbeträgen nach verteilen, damit jeder Spieler weiss, wie viele Spieler mehr Geld als er selbst gewonnen haben |
 | 10   | Muss            | Funktional     | Als System möchte ich jedem Spieler jede Phrase oder jedes Rätsel-Wort nur einmal anzeigen, damit der Spieler nicht bevorteilt ist |
 | 11   | Muss            | Funktional     | Als Spieler möchte ich jederzeit aufhören können, damit ich meinen Betrag in die Highscore-Liste übertragen kann      |
-| 12   | Muss            | Funktional     | Als System möchte ich wissen wie viel Runden ein Benutzer gespielt hat, damit Auswertungen getroffen werden können    |
-
-✍️ Jede User Story hat eine ganzzahlige Nummer (1, 2, 3 etc. oder Zahl), eine Verbindlichkeit (Muss oder Kann?), und einen Typ (Funktional, Qualität, Rand). 
+| 12   | Muss            | Funktional     | Als System möchte ich wissen wie viel Runden ein Benutzer gespielt hat, damit Auswertungen getroffen werden können    | 
 
 # 4.2 Testfälle
 
@@ -78,17 +74,17 @@ Interface???
 | 2.3  | Webseite ist geöffnet, Administrator ist eingeloggt | 1. Benutzer ändert ein medium   | 2. Geändertes Medium befindet sich aktualisiert in der Datenbank |
 | 3.1  | Webseite ist geöffnet, Administrator ist eingeloggt | 1. Benutzer erstellt eine neue Kategorie | 2. Medien können der Kategorie hinzugefügt werden      |
 | 4.1  | Webseite ist geöffnet, Administrator ist eingeloggt | 1. Benutzer löscht einen Highscore-Listeneintrag | 2. Highscore-Listeneintrag ist nicht mehr vorhanden |
-| 5.1  | Webseite ist geöffnet Benutzer spielt ein Spiel | 1. Benutzer beendet das Spiel</br>3. Benutzer gibt einen Namen ein  | 2. Benutzer wird aufgefortdert einen Namen einzugeben</br>4. Name erscheint mit Highscore in der Highscore-Liste |
-| 6.1  | | 1. | 2. |
-| 7.1  | | 1. | 2. |
-| 8.1  | | 1. | 2. |
-| 9.1  | | 1. | 2. |
-| 10.1 | | 1. | 2. |
-| 11.1 | | 1. | 2. |
-| 12.1 | | 1. | 2. |
-Medium steht für Rätsel-Wort und Phrase. 
+| 5.1  | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer beendet das Spiel</br>3. Benutzer gibt einen Namen ein  | 2. Benutzer wird aufgefortdert einen Namen einzugeben</br>4. Name erscheint mit Highscore in der Highscore-Liste |
+| 6.1  | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1.                                  | 2. Der Kontoastand wird angezeigt                              |
+| 7.1  | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1.                                  | 2. Die Lebenspunkte werden  angezeigt                          |
+| 8.1  | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer tätigt eine richtige eingabe | 2. Die eingabe wird als richtig dargestellt               |
+| 8.2  | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer tätigt eine falsche eingabe | 2. Die eingabe wird als falsch dargestellt                 |
+| 9.1  | Webseite ist geöffnet | 1. Benutzer navigiert zur Highscore-Liste                      | 2. Die Highscore Liste wird nach Rang aufsteigend sortiert     |
+| 10.1 | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer beantwortet ein Medium  | 2. Dieses medium wird dem benutzer nicht mehr angezeigt        |
+| 11.1 | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer beendet das Spiel | 2. Der Gewinn wird in die Highscore-Liste übertragen                 |
+| 12.1 | Webseite ist geöffnet, Benutzer spielt ein Spiel | 1. Benutzer schliesst eine Runde ab | 2. Die RUnde wird gezählt                                      |
 
-✍️ Die Nummer hat das Format `N.m`, wobei `N` die Nummer der User Story ist, die der Testfall abdeckt, und `m` von `1` an nach oben gezählt. Beispiel: Der dritte Testfall, der die zweite User Story abdeckt, hat also die Nummer `2.3`.
+Medium steht für Rätsel-Wort und Phrase. 
 
 # 5 Prototyp
 
