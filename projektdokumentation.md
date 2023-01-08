@@ -41,12 +41,9 @@ In der Webapplikation kann ein Nutzer durch das Erraten von Wörtern Geldbeträg
 # 3 Datenbank
 
 Firebase wird über das Firebase SDK angesprochen. Das Interfece ist bei Firebase eine Webseite. 
-Interface???
-✍️ Wie steuern Sie Ihre Datenbank an? Wie ist das Interface aufgebaut? 
+Das Interface genug gut erklärt?  
 
 # 4.1 User Stories
-
-✍️ Formulieren Sie weitere, eigene Anforderungen und Testfälle, wie Sie Ihre Applikation erweitern möchten. Geben Sie diesen statt einer Nummer einen Buchstaben (`A`, `B`, etc.)
 
 | US-№ | Verbindlichkeit | Typ            | Beschreibung                                                                                                          |
 | ---- | --------------- | -------------- | --------------------------------------------------------------------------------------------------------------------- |
@@ -62,6 +59,7 @@ Interface???
 | 10   | Muss            | Funktional     | Als System möchte ich jedem Spieler jede Phrase oder jedes Rätsel-Wort nur einmal anzeigen, damit der Spieler nicht bevorteilt ist |
 | 11   | Muss            | Funktional     | Als Spieler möchte ich jederzeit aufhören können, damit ich meinen Betrag in die Highscore-Liste übertragen kann      |
 | 12   | Muss            | Funktional     | Als System möchte ich wissen wie viel Runden ein Benutzer gespielt hat, damit Auswertungen getroffen werden können    | 
+| A    | Muss            | Rand           | Als Entwickler möchte ich mit .net MAUI Blazor arbeiten, damit ich mit dieser Technologie besser zurechtkomme         | 
 
 # 4.2 Testfälle
 
@@ -87,8 +85,8 @@ Interface???
 Medium steht für Rätsel-Wort und Phrase. 
 
 # 5 Prototyp
-
-✍️ Erstellen Sie Prototypen für das GUI (Admin-Interface und Quiz-Seite).
+![UserViews](https://user-images.githubusercontent.com/69578012/211195650-72e98056-1931-49f2-bffa-8cd3971d9328.png)
+![AdminViews](https://user-images.githubusercontent.com/69578012/211195656-7d59344c-9e9a-4b1b-aa9c-974daf7ab41f.png)
 
 # 6 Implementation
 
