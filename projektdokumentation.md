@@ -85,9 +85,9 @@ Das Interface genug gut erklärt?
 Medium steht für Rätsel-Wort und Phrase. 
 
 # 5 Prototyp
-Spieler Views 
+Spieler Views</br>
 ![UserViews](https://user-images.githubusercontent.com/69578012/211195650-72e98056-1931-49f2-bffa-8cd3971d9328.png)</br>
-Admin Views
+Admin Views</br>
 ![AdminViews](https://user-images.githubusercontent.com/69578012/211195656-7d59344c-9e9a-4b1b-aa9c-974daf7ab41f.png)</br>
 
 # 6 Implementation
