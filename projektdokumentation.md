@@ -86,7 +86,9 @@ Medium steht für Rätsel-Wort und Phrase.
 
 # 5 Prototyp
 ![UserViews](https://user-images.githubusercontent.com/69578012/211195650-72e98056-1931-49f2-bffa-8cd3971d9328.png)
+Spieler Views 
 ![AdminViews](https://user-images.githubusercontent.com/69578012/211195656-7d59344c-9e9a-4b1b-aa9c-974daf7ab41f.png)
+Admin Views
 
 # 6 Implementation
 
