@@ -4,7 +4,7 @@ Jütte
 
 | Datum       | Version | Zusammenfassung                                              |
 | ----------- | ------- | ------------------------------------------------------------ |
-| 04.01.2023  | 0.0.1   | Vorarbeit bis und mit Aufgabe 4                              |
+| 04.01.2023  | 0.0.1   | Vorarbeit bis und mit Aufgabe 5                              |
 |             | 0.0.2   |                                                              |
 |             | 0.0.3   |                                                              |
 |             | 0.0.4   |                                                              |
@@ -21,7 +21,7 @@ In der Webapplikation kann ein Nutzer durch das Erraten von Wörtern Geldbeträg
 * Tier 1 (Presentation):
     Anzeige der Loginseite, der Kreuzworträtsel-Seite, der Kreuzworträtsel-Bearbeiten-Seite, der Highscore Liste und clientseitige Eingabeprüfungen.
 * Tier 2 (Webserver):
-    Ist für die Steuerung des GUIs (Anweisungen von tieferen Schichten) und die weiterleitung der Aktionen des Benutzers zu tieferen schichten zuständig. 
+    Ist für die Steuerung des GUIs (Anweisungen von tieferen Schichten) und die Weiterleitung der Aktionen des Benutzers zu tieferen Schichten zuständig. 
 * Tier 3 (Application Server):
     Ist für die Businesslogik sowie das Speichern der Daten in der Datenbank und für die serverseitigen Eingabeprüfungen zuständig.
 * Tier 4 (Dataserver):
@@ -40,10 +40,9 @@ In der Webapplikation kann ein Nutzer durch das Erraten von Wörtern Geldbeträg
 
 # 3 Datenbank
 
-Firebase wird über das Firebase SDK angesprochen. Das Interfece ist bei Firebase eine Webseite. 
-Das Interface genug gut erklärt?  
+Firebase wird über das Firebase SDK angesprochen. Das Interface ist bei Firebase eine Webseite. Um mit Firebase in meinem Projekt kommunizieren zu können, muss das NuGet Paket von Firebase im Projekt heruntergeladen werden. Mit den Funktionen vom NuGet Paket kann nun mithilfe von Links mit Firebase kommunizieren. Die Datenbank hat die Form eines JSON-Baums.
 
-# 4.1 User Stories
+# 4.1 User Storys
 
 | US-№ | Verbindlichkeit | Typ            | Beschreibung                                                                                                          |
 | ---- | --------------- | -------------- | --------------------------------------------------------------------------------------------------------------------- |
