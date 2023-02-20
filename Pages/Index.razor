@@ -1,0 +1,36 @@
+﻿@page "/"
+@inject NavigationManager navigationManager
+
+<div id="header" class="row m-auto">
+    <div class="col-auto align-self-center">
+        <a href="/">Spiel</a>
+    </div>
+    <div class="col-auto align-self-center">
+        <a href="/scoreboard">Scoreboard</a>
+    </div>
+    <div class="col"></div>
+    <div class="col-auto align-self-center">
+        <button id="admin-login-btn" class="btn" onclick="@adminLoginBtnClicked">Admin login</button>
+    </div>
+</div>
+
+<div class="container">
+    <div id="game" class="row justify-content-center">
+        <div class="col-auto align-self-center">
+            <button id="start-game-btn" class="btn" onclick="@startGameBtnClicked">Spiel starten</button>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    void adminLoginBtnClicked()
+    {
+        navigationManager.NavigateTo("/adminLogin");
+    }
+
+    void startGameBtnClicked()
+    {
+        navigationManager.NavigateTo("/gameView");
+    }
+}

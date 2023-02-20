@@ -1,0 +1,93 @@
+﻿@page "/adminView"
+@inject NavigationManager navigationManager
+
+<div id="header" class="row m-auto">
+    <div class="col"></div>
+    <div class="col-auto align-self-center">
+        <button id="add-word-btn" class="btn" onclick="@addWordBtnClicked">Phrase / Wort hinzufügen</button>
+    </div>
+    <div class="col-auto align-self-center">
+        <button id="add-category-btn" class="btn" onclick="@addCategoryBtnClicked">Kategorie hizufügen</button>
+    </div>
+    <div class="col-auto align-self-center">
+        <button id="logout-btn" class="btn" onclick="@logoutBtnClicked">Logout</button>
+    </div>
+</div>
+
+<div class="container">
+    <h3>Phrasen und Rätsel-Wörter</h3>
+    <div class="word-list-item">
+        <div class="row">
+            <div class="col-auto align-self-center">
+                Name
+            </div>
+            <div class="col"></div>
+            <div class="col-auto align-self-center">
+                Kategorie
+            </div>
+            <div class="col-auto align-self-center">
+                <select name="categories" id="category-select" onselect="@categorySelectionChanged">
+                    <option value="test1">Test 1</option>
+                    <option value="test2">Test 2</option>
+                    <option value="test3">Test 3</option>
+                </select>
+            </div>
+            <div class="col-auto align-self-center">
+                <button id="edit-btn" class="btn" onclick="@editWordBtnClicked">Bearbeiten</button>
+            </div>
+            <div class="col-auto align-self-center">
+                <button id="delete-btn" class="btn" onclick="@deleteWordBtnClicked">Löschen</button>
+            </div>
+        </div>
+    </div>
+
+    <h3>Highscore-Liste</h3>
+    <div class="highscore-list-item">
+        <div class="row">
+            <div class="col-auto align-self-center">
+                Name
+            </div>
+            <div class="col"></div>
+            <div class="col-auto align-self-center">
+                <button id="delete-btn" class="btn" onclick="@deleteHighscoreBtnClicked">Löschen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    void addWordBtnClicked()
+    {
+
+    }
+
+    void addCategoryBtnClicked()
+    {
+
+    }
+
+    void logoutBtnClicked()
+    {
+        navigationManager.NavigateTo("/");
+    }
+
+    void categorySelectionChanged()
+    {
+
+    }
+
+    void editWordBtnClicked()
+    {
+
+    }
+
+    void deleteWordBtnClicked()
+    {
+
+    }
+
+    void deleteHighscoreBtnClicked()
+    {
+
+    }
+}
