@@ -11,9 +11,11 @@ namespace JuetteJoel_LB151.Data
         public string word { get; set; }
         public string category { get; set; }
 
-        public Word(string word)
+        public Word() { }
+        public Word(string word, string category)
         {
             this.word = word;
+            this.category = category;
         }
     }
 }

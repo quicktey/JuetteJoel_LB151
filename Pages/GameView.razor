@@ -1,5 +1,10 @@
 ﻿@page "/gameView"
 @inject NavigationManager navigationManager
+@using JuetteJoel_LB151.Data
+@using JuetteJoel_LB151.Data.Firebase
+@inject FirebaseWord firebaseWord
+@inject FirebaseScoreboard firebaseScoreboard
+@inject IJSRuntime JSRuntime
 
 <div id="header" class="row m-auto">
     <div class="col-auto align-self-center">
@@ -15,20 +20,36 @@
         <div class="col">
             <h3>Errate das Wort</h3>
             <div class="row">
-                <div class="col-auto">
-                    <div class="letter-box">
-                        <div class="letter">
-                            a
+                @foreach (char iterate in wordToDisplay)
+                {
+                    <div class="col-auto">
+                        <div class="letter-box">
+                            <div class="letter">
+                                @iterate
+                            </div>
                         </div>
                     </div>
+                }
+            </div>
+            <p>Kategorie: @category</p>
+
+            <div class="row">
+                <div class="col">
+                    <input type="text" id="user-input" class="form-control" @bind="userinput" placeholder="Buchstabe oder Wort eingeben">
+                </div>
+                <div class="col">
+                    <button id="user-input-btn" class="btn" onclick="@userInputBtnClicked">Absenden</button>
                 </div>
             </div>
-            <h3>Bereits versucht</h3>
-            <p>y, c</p>
+
+            <p>Vokale kosten CHF 50. Sie können gekauft werden indem man sie eingibt</p>
+
+            <p>Bereits versucht: @alreadyTried</p>
         </div>
         <div class="col-auto">
-            <h3>Kontostand: 12'000</h3>
-            <h3>Lebenspunkte: *</h3>
+            <h3>Kontostand: @accountScore</h3>
+            <h3>Lebenspunkte: @lifePoints</h3>
+            <h3>Runden: @playedRounds</h3>
             <button id="end-game-btn" class="btn" onclick="@endGameBtnClicked">Spiel beenden</button>
         </div>
     </div>
@@ -36,19 +57,194 @@
 </div>
 
 @code {
+    private int playedRounds = 0;
+    private char[] word = { ' ' };
+    private char[] wordToDisplay = { ' ' };
+    private char[] vocals = { 'a', 'e', 'i', 'o', 'u' };
+    private string category = "";
+    private string alreadyTried = "";
+    private int accountScore = 0;
+    private string lifePoints = "♥♥♥";
+    private List<Word> words = new List<Word>();
+    private Random random = new Random();
+    private Word currentWord;
+    private string userinput = "";
+    private static readonly ManualResetEvent waitHandle = new ManualResetEvent(false);
+    private bool isRoundFinished = false;
+    private bool isGameFinished = false;
+    private bool isWordFinished = false;
+    private bool isUserBroke = false;
 
-    void adminLoginBtnClicked()
+    protected async override void OnInitialized()
+    {
+        words = await firebaseWord.getWords();
+        await Task.Run(() => play());
+    }
+
+    private async Task play()
+    {
+        do
+        {
+            isRoundFinished = false;
+            isWordFinished = false;
+            getNextWord();
+
+            do
+            {
+                waitHandle.WaitOne();
+                await checkInputWithWord();
+                waitHandle.Reset();
+                alreadyTried += userinput + " ";
+                userinput = "";
+
+                if (!wordToDisplay.Contains('_'))
+                {
+                    isRoundFinished = true;
+                    isWordFinished = true;
+                }
+
+                if (accountScore < 0)
+                {
+                    isRoundFinished = true;
+                    isUserBroke = true;
+                }
+
+            } while (!isRoundFinished);
+
+            if (isWordFinished && !isUserBroke)
+            {
+                await showAlert("Sie haben das Wort erraten. Es wird ein neues geladen.");
+                playedRounds++;
+                alreadyTried = "";
+            }
+
+        } while (!isGameFinished);
+
+        string playerName = "";
+        do
+        {
+            if (lifePoints == "")
+            {
+                playerName = await promptAsync("Sie haben keine Leben mehr. Bitte geben Sie einen Namen ein.", "");
+            }
+            else
+            {
+                playerName = await promptAsync("Sie sind baknrott. Bitte geben Sie einen Namen ein.", "");
+            }
+
+        } while (playerName == null);
+
+        DateTime date = DateTime.Now;
+        await firebaseScoreboard.addScoreboardEntry(new ScoreboardEntry(playerName, date, accountScore, playedRounds));
+        navigationManager.NavigateTo("/");
+    }
+
+    private void getNextWord()
+    {
+        int randomIndex = random.Next(words.Count);
+        currentWord = words[randomIndex];
+        word = currentWord.word.ToCharArray();
+        wordToDisplay = currentWord.word.ToCharArray();
+        for (int i = 0; i < word.Length; i++)
+        {
+            if (word[i] == ' ')
+            {
+                wordToDisplay[i] = ' ';
+            }
+            else
+            {
+                wordToDisplay[i] = '_';
+            }
+        }
+        category = currentWord.category;
+        words.Remove(currentWord);
+    }
+
+    private void subtractLifepoint()
+    {
+        if (lifePoints == "♥")
+        {
+            isRoundFinished = true;
+            isGameFinished = true;
+        }
+        int points = lifePoints.Length - 1;
+        lifePoints = "";
+        for (int i = 0; i < points; i++)
+        {
+            lifePoints += "♥";
+        }
+    }
+
+    private void userInputBtnClicked()
+    {
+        waitHandle.Set();
+    }
+
+    private async Task checkInputWithWord()
+    {
+        char[] userinputAsChar = userinput.ToLower().ToCharArray();
+
+        if (currentWord.word.ToLower().Contains(userinput.ToLower()))
+        {
+            for (int i = 0; i < currentWord.word.Length; i++)
+            {
+                for (int x = 0; x < userinputAsChar.Length; x++)
+                {
+                    if (char.ToLower(word[i]) == userinputAsChar[x])
+                    {
+                        if (char.ToLower(wordToDisplay[i]) != userinputAsChar[x])
+                        {
+                            wordToDisplay[i] = userinputAsChar[x];
+                            if (vocals.Contains(userinputAsChar[x]))
+                            {
+                                accountScore -= 50;
+                            }
+                            else
+                            {
+                                accountScore += 100;
+                            }
+                        }
+                    }
+                }
+            }
+            await showAlert("Eingabe ist korrekt.");
+        }
+        else
+        {
+            await showAlert("Eingabe ist falsch.");
+            subtractLifepoint(); ;
+        }
+    }
+
+    private async void endGameBtnClicked()
+    {
+        string playerName = await promptAsync("Um das Spiel zu beenden müssen Sie einen Namen eingeben", "");
+        if (playerName != null)
+        {
+            DateTime date = DateTime.Now;
+            await firebaseScoreboard.addScoreboardEntry(new ScoreboardEntry(playerName, date, accountScore, playedRounds));
+            navigationManager.NavigateTo("/");
+        }
+    }
+
+    private void adminLoginBtnClicked()
     {
         navigationManager.NavigateTo("/adminLogin");
     }
 
-    void startGameBtnClicked()
+    private void startGameBtnClicked()
     {
         navigationManager.NavigateTo("/gameView");
     }
 
-    void endGameBtnClicked()
+    private async Task<string> promptAsync(string message, string defaultValue)
     {
-        navigationManager.NavigateTo("/");
+        return await JSRuntime.InvokeAsync<string>
+            ("prompt", message, defaultValue);
+    }
+
+    private async Task showAlert(string message)
+    {
+        await JSRuntime.InvokeAsync<object>("alert", message);
     }
 }

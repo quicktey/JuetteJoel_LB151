@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Components.WebView.Maui;
+﻿using Blazored.Modal;
+using JuetteJoel_LB151.Data;
+using JuetteJoel_LB151.Data.Firebase;
+using Microsoft.AspNetCore.Components.WebView.Maui;
 
 namespace JuetteJoel_LB151;
 
@@ -18,6 +21,9 @@ public static class MauiProgram
 		#if DEBUG
 		builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
+		builder.Services.AddSingleton<FirebaseScoreboard>();
+		builder.Services.AddSingleton<FirebaseCategory>();
+		builder.Services.AddSingleton<FirebaseWord>();
 
 		return builder.Build();
 	}

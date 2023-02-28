@@ -1,5 +1,7 @@
 ﻿@page "/adminLogin"
 @inject NavigationManager navigationManager
+@using JuetteJoel_LB151.Data
+@using JuetteJoel_LB151.Data.Firebase
 
 <div id="header" class="row m-auto">
     <div class="col-auto align-self-center">
@@ -16,20 +18,32 @@
         <h3>Login</h3>
         <div class="form-group">
             <label for="email-input">E-Mail</label>
-            <input type="email" id="email-input" class="form-control" placeholder="E-Mail" required>
+            <input type="email" id="email-input" class="form-control" @bind="@email" placeholder="E-Mail" required>
         </div>
         <div class="form-group">
             <label for="password-input">Passwort</label>
-            <input type="password" id="password-input" class="form-control" placeholder="Passwort" required>
+            <input type="password" id="password-input" class="form-control" @bind="@password" placeholder="Passwort" required>
         </div>
+        <br />
         <button id="login-btn" class="btn" onclick="@loginBtnClicked">Login</button>
     </form>
 </div>
 
 @code {
+    private Authentication authentication = new Authentication();
+    private string email;
+    private string password;
 
-    void loginBtnClicked()
+    private async void loginBtnClicked(MouseEventArgs e)
     {
-        navigationManager.NavigateTo("/adminView");
+        //authentication.addAdmintoDB(email, password); um Admins hinuzuzufügen
+
+        if (email != null && password != null)
+        {
+            if (await authentication.login(email, password))
+            {
+                navigationManager.NavigateTo("/adminView");
+            }
+        }
     }
 }

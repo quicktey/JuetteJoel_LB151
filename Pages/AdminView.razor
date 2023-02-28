@@ -1,5 +1,11 @@
 ﻿@page "/adminView"
 @inject NavigationManager navigationManager
+@using JuetteJoel_LB151.Data
+@using JuetteJoel_LB151.Data.Firebase
+@inject FirebaseScoreboard firebaseScoreboard
+@inject FirebaseCategory firebaseCategory
+@inject FirebaseWord firebaseWord
+@inject IJSRuntime JSRuntime
 
 <div id="header" class="row m-auto">
     <div class="col"></div>
@@ -16,78 +22,156 @@
 
 <div class="container">
     <h3>Phrasen und Rätsel-Wörter</h3>
-    <div class="word-list-item">
-        <div class="row">
-            <div class="col-auto align-self-center">
-                Name
-            </div>
-            <div class="col"></div>
-            <div class="col-auto align-self-center">
-                Kategorie
-            </div>
-            <div class="col-auto align-self-center">
-                <select name="categories" id="category-select" onselect="@categorySelectionChanged">
-                    <option value="test1">Test 1</option>
-                    <option value="test2">Test 2</option>
-                    <option value="test3">Test 3</option>
-                </select>
-            </div>
-            <div class="col-auto align-self-center">
-                <button id="edit-btn" class="btn" onclick="@editWordBtnClicked">Bearbeiten</button>
-            </div>
-            <div class="col-auto align-self-center">
-                <button id="delete-btn" class="btn" onclick="@deleteWordBtnClicked">Löschen</button>
+    @foreach (Word iterate in words)
+    {
+        <div class="word-list-item">
+            <div class="row">
+                <div class="col-auto align-self-center">
+                    @iterate.word
+                </div>
+                <div class="col"></div>
+                <div class="col-auto align-self-center">
+                    Kategorie
+                </div>
+                <div class="col-auto align-self-center">
+                    <select name="categories" id="category-select" @onchange="args => categorySelectionChanged(iterate, args)">
+                        @foreach (Category itarateCategory in categories)
+                        {
+                            if (iterate.category == itarateCategory.categoryName)
+                            {
+                                <option value="@itarateCategory.categoryName" selected>@itarateCategory.categoryName</option>
+                            } else{
+                                <option value="@itarateCategory.categoryName">@itarateCategory.categoryName</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="col-auto align-self-center">
+                    <button id="edit-btn" class="btn" @onclick="() => editWordBtnClicked(iterate)">Bearbeiten</button>
+                </div>
+                <div class="col-auto align-self-center">
+                    <button id="delete-btn" class="btn" @onclick="() => deleteWordBtnClicked(iterate)">Löschen</button>
+                </div>
             </div>
         </div>
-    </div>
+    }
 
     <h3>Highscore-Liste</h3>
-    <div class="highscore-list-item">
-        <div class="row">
-            <div class="col-auto align-self-center">
-                Name
-            </div>
-            <div class="col"></div>
-            <div class="col-auto align-self-center">
-                <button id="delete-btn" class="btn" onclick="@deleteHighscoreBtnClicked">Löschen</button>
+    @foreach (ScoreboardEntry iterate in scoreboardEntries)
+    {
+        rank ++;
+        <div class="highscore-list-item">
+            <div class="row">
+                <div id="scoreboard-entry-name" class="col-auto align-self-center">
+                    @rank. @iterate.playerName
+                </div>
+                <div class="col-auto align-self-center">
+                    @iterate.score
+                </div>
+                <div id="scoreboard-entry-score" class="col align-self-center">
+                    @iterate.playedRounds
+                </div>
+                <div class="col-auto align-self-center">
+                    @iterate.dateTime
+                </div>
+                <div class="col-auto align-self-center">
+                    <button id="delete-btn" class="btn" @onclick="() => deleteHighscoreBtnClicked(iterate)">Löschen</button>
+                </div>
             </div>
         </div>
-    </div>
+    }
 </div>
 
 @code {
-    void addWordBtnClicked()
-    {
+    private List<ScoreboardEntry> scoreboardEntries = new List<ScoreboardEntry>();
+    private List<Category> categories = new List<Category>();
+    private List<Word> words = new List<Word>();
+    private int rank = 0;
 
+    protected override void OnInitialized()
+    {
+        loadScoreboardData();
+        loadCategoryData();
+        loadWordData();
     }
 
-    void addCategoryBtnClicked()
+    private async void loadScoreboardData()
     {
-
+        rank = 0;
+        scoreboardEntries = await firebaseScoreboard.getScoreboardEntries();
+        scoreboardEntries.Sort((entry1, entry2) => entry2.score.CompareTo(entry1.score));
+        StateHasChanged();
     }
 
-    void logoutBtnClicked()
+    private async void loadCategoryData()
+    {
+        rank = 0;
+        categories = await firebaseCategory.GetCategories();
+        StateHasChanged();
+    }
+
+    private async void loadWordData()
+    {
+        rank = 0;
+        words = await firebaseWord.getWords();
+        StateHasChanged();
+    }
+
+    private async void addCategoryBtnClicked()
+    {
+        string newCategory = await PromptAsync("Wie möchten Sie die neue Kategorie benennen?", "");
+        Category category = new Category(newCategory);
+        await firebaseCategory.addCategory(category);
+        loadCategoryData();
+    }
+
+    private async void addWordBtnClicked()
+    {
+        string newWord = await PromptAsync("Wie möchten Sie die neue  Phrase / das neue Rätsel-Wort benennen?", "");
+        if (newWord != null)
+        {
+            Word word = new Word(newWord, "none");
+            await firebaseWord.addWord(word);
+            loadWordData();
+        }
+    }
+
+    private async void categorySelectionChanged(Word word, ChangeEventArgs e)
+    {
+        word.category = e.Value.ToString();
+        await firebaseWord.updateWordCategory(word);
+        // refresh data (not shure)
+    }
+
+    private async void editWordBtnClicked(Word word)
+    {
+        string updatedWord = await PromptAsync("Wie möchten Sie das Wort: " + word.word + " umbenennen?", word.word);
+        if (updatedWord != null)
+        {
+            await firebaseWord.updateWordName(word, updatedWord);
+            loadWordData();
+        }
+    }
+
+    private async void deleteWordBtnClicked(Word word)
+    {
+        await firebaseWord.removeWord(word);
+        loadWordData();
+    }
+
+    private async void deleteHighscoreBtnClicked(ScoreboardEntry scoreboardEntry)
+    {
+        await firebaseScoreboard.removeScoreboardEntry(scoreboardEntry);
+        loadScoreboardData();
+    }
+
+    private void logoutBtnClicked()
     {
         navigationManager.NavigateTo("/");
     }
 
-    void categorySelectionChanged()
+    private async Task<string> PromptAsync(string message, string defaultValue)
     {
-
-    }
-
-    void editWordBtnClicked()
-    {
-
-    }
-
-    void deleteWordBtnClicked()
-    {
-
-    }
-
-    void deleteHighscoreBtnClicked()
-    {
-
+        return await JSRuntime.InvokeAsync<string>("prompt", message, defaultValue);
     }
 }
