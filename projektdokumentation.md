@@ -5,7 +5,7 @@ Jütte
 | Datum       | Version | Zusammenfassung                                              |
 | ----------- | ------- | ------------------------------------------------------------ |
 | 04.01.2023  | 0.0.1   | Vorarbeit bis und mit Aufgabe 5                              |
-|             | 0.0.2   |                                                              |
+| 01.03.2023  | 0.0.2   | Aufgabe 6 und 7 erledigt                                     |
 |             | 0.0.3   |                                                              |
 |             | 0.0.4   |                                                              |
 |             | 0.0.5   |                                                              |
@@ -53,7 +53,7 @@ Firebase wird über das Firebase SDK angesprochen. Das Interface ist bei Firebas
 | 5    | Muss            | Funktional     | Als System möchte ich, dass jeder Benutzer, welcher einen Highscore erreicht, einen Namen eingeben muss, damit ich den Highscore in der Highscore-Liste mit Namen abbilden kann |
 | 6    | Muss            | Funktional     | Als Spieler möchte ich zu jeder Zeit den Kontostand sehen, damit ich weiss, wie viel Geld ich habe                    |
 | 7    | Muss            | Funktional     | Als Spieler möchte ich zu jeder Zeit die Lebenspunkte sehen, damit ich weiss, wie viel Leben ich noch habe            |
-| 8    | Muss            | Funktional     | Als Spieler möchte ich wissen, ob die Antwort richtig oder falsch war, damit ich weiss, ob mit ein Leben abgezogen wird oder nicht |
+| 8    | Muss            | Funktional     | Als Spieler möchte ich wissen, ob die Antwort richtig oder falsch war, damit ich weiss, ob mir ein Leben abgezogen wird oder nicht |
 | 9    | Muss            | Funktional     | Als System möchte ich die Highscore-Listen-Ränge den Geldbeträgen nach verteilen, damit jeder Spieler weiss, wie viele Spieler mehr Geld als er selbst gewonnen haben |
 | 10   | Muss            | Funktional     | Als System möchte ich jedem Spieler jede Phrase oder jedes Rätsel-Wort nur einmal anzeigen, damit der Spieler nicht bevorteilt ist |
 | 11   | Muss            | Funktional     | Als Spieler möchte ich jederzeit aufhören können, damit ich meinen Betrag in die Highscore-Liste übertragen kann      |
@@ -93,16 +93,39 @@ Admin Views</br>
 
 ✍️ Halten Sie fest, wann Sie welche User Story bearbeitet haben
 
-| User Story | Datum | Beschreibung |
-| ---------- | ----- | ------------ |
-| ...        |       |              |
+| User Story | Datum                   | Beschreibung |
+| ---------- | ----------------------- | ------------ |
+| 1          | 21.02.2023              |              |
+| 2          | 21.02.2023              |              |
+| 3          | 21.02.2023              |              |
+| 4          | 21.02.2023              |              |
+| 5          | 24.02.2023              |              |
+| 6          | 24.02.2023              |              |
+| 7          | 24.02.2023              |              |
+| 8          | 24.02.2023              |              |
+| 9          | 24.02.2023              |              |
+| 10         | 28.02.2023              |              |
+| 11         | 24.02.2023              |              |
+| 12         | 24.02.2023              |              |
+| A          | 12.01.2023 - 02.03.2023 |              |
 
 # 7 Projektdokumentation
 
-| US-№ | Erledigt? | Entsprechende Code-Dateien oder Erklärung |
-| ---- | --------- | ----------------------------------------- |
-| 1    | ja / nein |                                           |
-| ...  |           |                                           |
+| US-№ | Erledigt? | Entsprechende Code-Dateien oder Erklärung                                     |
+| ---- | --------- | ----------------------------------------------------------------------------- |
+| 1    | ja        | Siehe Zeilen 41 bis 47 in der Datei: AdminLogin.razor                         |
+| 2    | ja        | Siehe Zeilen 128 bis 137 und 146 bis 160 in der Datei: AdminView.razor        |
+| 3    | ja        | Siehe Zeilen 120 bis 126 und 139 bis 144 in der Datei: AdminView.razor        |
+| 4    | ja        | Siehe Zeilen 162 bis 166 in der Datei: AdminView.razor                        |
+| 5    | ja        | Siehe Zeilen 123 bis 139 und 219 bis 228 in der Datei: GameView.razor         |
+| 6    | ja        | Siehe Zeile 50 in der Datei: GameView.razor                                   |
+| 7    | ja        | Siehe Zeile 51 in der Datei: GameView.razor                                   |
+| 8    | ja        | Siehe Zeile 210 und 214 in der Datei: GameView.razor                          |
+| 9    | ja        | Siehe Zeile 20, 24 und 49 bis 55 in der Datei: Scoreboard.razor               |
+| 10   | ja        | Siehe Zeile 160 in der Datei: GameView.razor                                  |
+| 11   | ja        | Siehe Zeile 53 und 219 bis 228 in der Datei: GameView.razor                   |
+| 12   | ja        | Siehe Zeile 52 in der Datei: GameView.razor                                   |
+| A    | ja        | Anhand des Codes kann man erkennen, dass ich .net MAUI Blazor verwendet habe. |
 
 # 8 Testprotokoll
 
