@@ -88,7 +88,7 @@
             isRoundFinished = false;
             isWordFinished = false;
             getNextWord();
-
+            await InvokeAsync(() => StateHasChanged());
             do
             {
                 waitHandle.WaitOne();
@@ -96,7 +96,7 @@
                 waitHandle.Reset();
                 alreadyTried += userinput + " ";
                 userinput = "";
-
+                await InvokeAsync(() => StateHasChanged());
                 if (!wordToDisplay.Contains('_'))
                 {
                     isRoundFinished = true;
@@ -106,6 +106,7 @@
                 if (accountScore < 0)
                 {
                     isRoundFinished = true;
+                    isGameFinished = true;
                     isUserBroke = true;
                 }
 
@@ -123,14 +124,17 @@
         string playerName = "";
         do
         {
-            if (lifePoints == "")
+            do
             {
-                playerName = await promptAsync("Sie haben keine Leben mehr. Bitte geben Sie einen Namen ein.", "");
-            }
-            else
-            {
-                playerName = await promptAsync("Sie sind baknrott. Bitte geben Sie einen Namen ein.", "");
-            }
+                if (lifePoints == "")
+                {
+                    playerName = await promptAsync("Sie haben keine Leben mehr. Bitte geben Sie einen Namen ein.", "");
+                }
+                else
+                {
+                    playerName = await promptAsync("Sie sind baknrott. Bitte geben Sie einen Namen ein.", "");
+                }
+            } while (playerName == "");
 
         } while (playerName == null);
 
@@ -195,24 +199,36 @@
                         if (char.ToLower(wordToDisplay[i]) != userinputAsChar[x])
                         {
                             wordToDisplay[i] = userinputAsChar[x];
-                            if (vocals.Contains(userinputAsChar[x]))
-                            {
-                                accountScore -= 50;
-                            }
-                            else
-                            {
-                                accountScore += 100;
-                            }
                         }
                     }
                 }
             }
             await showAlert("Eingabe ist korrekt.");
+            manageScore(true);
         }
         else
         {
             await showAlert("Eingabe ist falsch.");
-            subtractLifepoint(); ;
+            subtractLifepoint();
+            manageScore(false);
+        }
+    }
+
+    private void manageScore(bool isInputCorrect)
+    {
+        char[] userinputAsChar = userinput.ToLower().ToCharArray();
+
+        for(int i = 0; i < userinputAsChar.Length; i++){
+            if (vocals.Contains(userinputAsChar[i]))
+            {
+                accountScore -= 50;
+            }
+            else
+            {
+                if(isInputCorrect){
+                    accountScore += 100;
+                }
+            }
         }
     }
 
