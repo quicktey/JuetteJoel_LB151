@@ -124,6 +124,7 @@ Admin Views</br>
 # 8 Testprotokoll
 
 [Demo Video](https://www.youtube.com/watch?v=Z9OQcDoH66g)
+[Ergänzungsvideo Testfall 8.2](https://www.youtube.com/watch?v=-pAOzPCUU_8)
 
 | TC-№ | Datum      | Resultat | Tester     |
 | ---- | ---------- | -------- | ---------- |
@@ -138,7 +139,7 @@ Admin Views</br>
 | 6.1  | 02.03.2023 | OK       | Joel Jütte |
 | 7.1  | 02.03.2023 | OK       | Joel Jütte |
 | 8.1  | 02.03.2023 | OK       | Joel Jütte |
-| 8.2  | 02.03.2023 | NOK      | Joel Jütte |
+| 8.2  | 02.03.2023 | OK/NOK   | Joel Jütte |
 | 9.1  | 02.03.2023 | OK       | Joel Jütte |
 | 10.1 | 02.03.2023 | OK       | Joel Jütte |
 | 11.1 | 02.03.2023 | OK       | Joel Jütte |
@@ -147,7 +148,7 @@ Admin Views</br>
 Bemerkungen:</br>
 Admin View buggt, wie im Video erklärt.</br>
 Beim Bearbeiten eines Wortes wird ein neuer Eintrag gemacht und das alte gelöscht. Es wird nicht das bestehende Element bearbeitet.</br>
-Bei falschen Eingaben gibt es eine Fehlermeldung und eine Success-Meldung.
+Bei falschen Eingaben gibt es einen Bug. Es wird eine Fehlermeldung und eine Erfolgsmeldung angezeigt.
 
 Fazit:</br>
 Die App ist voll funktionsfähig, hat allerdings noch 3 Bugs. Diese sind unter den Testfällen bei Bemerkungen aufgeführt.
