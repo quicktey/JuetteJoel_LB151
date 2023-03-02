@@ -6,11 +6,7 @@ Jütte
 | ----------- | ------- | ------------------------------------------------------------ |
 | 04.01.2023  | 0.0.1   | Vorarbeit bis und mit Aufgabe 5                              |
 | 01.03.2023  | 0.0.2   | Aufgabe 6 und 7 erledigt                                     |
-|             | 0.0.3   |                                                              |
-|             | 0.0.4   |                                                              |
-|             | 0.0.5   |                                                              |
-|             | 0.0.6   |                                                              |
-|             | 1.0.0   |                                                              |
+| 02.03.2023  | 0.0.3   | Fertigstellung                                               |
 
 # 0 Ihr Projekt
 
@@ -129,16 +125,30 @@ Admin Views</br>
 
 ✍️ Fügen Sie hier den Link zu dem Video ein, welches den Testdurchlauf dokumentiert.
 
-| TC-№ | Datum | Resultat | Tester |
-| ---- | ----- | -------- | ------ |
-| 1.1  |       |          |        |
-| ...  |       |          |        |
+| TC-№ | Datum      | Resultat | Tester     |
+| ---- | ---------- | -------- | ---------- |
+| 1.1  | 02.03.2023 |          | Joel Jütte |
+| 1.2  | 02.03.2023 |          | Joel Jütte |
+| 2.1  | 02.03.2023 |          | Joel Jütte |
+| 2.2  | 02.03.2023 |          | Joel Jütte |
+| 2.3  | 02.03.2023 |          | Joel Jütte |
+| 3.1  | 02.03.2023 |          | Joel Jütte |
+| 4.1  | 02.03.2023 |          | Joel Jütte |
+| 5.1  | 02.03.2023 |          | Joel Jütte |
+| 6.1  | 02.03.2023 |          | Joel Jütte |
+| 7.1  | 02.03.2023 |          | Joel Jütte |
+| 8.1  | 02.03.2023 |          | Joel Jütte |
+| 8.2  | 02.03.2023 |          | Joel Jütte |
+| 9.1  | 02.03.2023 |          | Joel Jütte |
+| 10.1 | 02.03.2023 |          | Joel Jütte |
+| 11.1 | 02.03.2023 |          | Joel Jütte |
+| 12.1 | 02.03.2023 |          | Joel Jütte |
 
 ✍️ Vergessen Sie nicht, ein Fazit hinzuzufügen, welches das Test-Ergebnis einordnet.
 
 # 9 `README.md`
 
-✍️ Beschreiben Sie ausführlich in einer README.md, wie Ihre Applikation gestartet und ausgeführt wird. Legen Sie eine geeignete Möglichkeit (Skript, Export, …) bei, Ihre Datenbank wiederherzustellen.
+Zur README.md Datei: https://github.com/quicktey/JuetteJoel_LB151/blob/main/README.md
 
 # 10 Allgemeines
 
