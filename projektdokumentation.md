@@ -123,35 +123,35 @@ Admin Views</br>
 
 # 8 Testprotokoll
 
-✍️ Fügen Sie hier den Link zu dem Video ein, welches den Testdurchlauf dokumentiert.
+[Demo Video](https://www.youtube.com/watch?v=Z9OQcDoH66g)
 
 | TC-№ | Datum      | Resultat | Tester     |
 | ---- | ---------- | -------- | ---------- |
-| 1.1  | 02.03.2023 |          | Joel Jütte |
-| 1.2  | 02.03.2023 |          | Joel Jütte |
-| 2.1  | 02.03.2023 |          | Joel Jütte |
-| 2.2  | 02.03.2023 |          | Joel Jütte |
-| 2.3  | 02.03.2023 |          | Joel Jütte |
-| 3.1  | 02.03.2023 |          | Joel Jütte |
-| 4.1  | 02.03.2023 |          | Joel Jütte |
-| 5.1  | 02.03.2023 |          | Joel Jütte |
-| 6.1  | 02.03.2023 |          | Joel Jütte |
-| 7.1  | 02.03.2023 |          | Joel Jütte |
-| 8.1  | 02.03.2023 |          | Joel Jütte |
-| 8.2  | 02.03.2023 |          | Joel Jütte |
-| 9.1  | 02.03.2023 |          | Joel Jütte |
-| 10.1 | 02.03.2023 |          | Joel Jütte |
-| 11.1 | 02.03.2023 |          | Joel Jütte |
-| 12.1 | 02.03.2023 |          | Joel Jütte |
+| 1.1  | 02.03.2023 | OK       | Joel Jütte |
+| 1.2  | 02.03.2023 | OK       | Joel Jütte |
+| 2.1  | 02.03.2023 | OK       | Joel Jütte |
+| 2.2  | 02.03.2023 | OK       | Joel Jütte |
+| 2.3  | 02.03.2023 | OK       | Joel Jütte |
+| 3.1  | 02.03.2023 | OK       | Joel Jütte |
+| 4.1  | 02.03.2023 | OK       | Joel Jütte |
+| 5.1  | 02.03.2023 | OK       | Joel Jütte |
+| 6.1  | 02.03.2023 | OK       | Joel Jütte |
+| 7.1  | 02.03.2023 | OK       | Joel Jütte |
+| 8.1  | 02.03.2023 | OK       | Joel Jütte |
+| 8.2  | 02.03.2023 | NOK      | Joel Jütte |
+| 9.1  | 02.03.2023 | OK       | Joel Jütte |
+| 10.1 | 02.03.2023 | OK       | Joel Jütte |
+| 11.1 | 02.03.2023 | OK       | Joel Jütte |
+| 12.1 | 02.03.2023 | OK       | Joel Jütte |
 
-✍️ Vergessen Sie nicht, ein Fazit hinzuzufügen, welches das Test-Ergebnis einordnet.
+Bemerkungen:</br>
+Admin View buggt, wie im Video erklärt.</br>
+Beim Bearbeiten eines Wortes wird ein neuer Eintrag gemacht und das alte gelöscht. Es wird nicht das bestehende Element bearbeitet.</br>
+Bei falschen Eingaben gibt es eine Fehlermeldung und eine Success-Meldung.
+
+Fazit:</br>
+Die App ist voll funktionsfähig, hat allerdings noch 3 Bugs. Diese sind unter den Testfällen bei Bemerkungen aufgeführt.
 
 # 9 `README.md`
 
-Zur README.md Datei: https://github.com/quicktey/JuetteJoel_LB151/blob/main/README.md
-
-# 10 Allgemeines
-
-- [ ] Ich habe die Rechtschreibung überprüft
-- [ ] Ich habe überprüft, dass die Nummerierung von Testfällen und User Stories übereinstimmen
-- [ ] Ich habe alle mit ✍️ markierten Teile ersetzt
+[Zur README.md Datei:](https://github.com/quicktey/JuetteJoel_LB151/blob/main/README.md)
