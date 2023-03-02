@@ -1,0 +1,16 @@
+{
+  "categories": {
+    "Berufe": {
+      "categoryName": "Berufe"
+    },
+    "Namen": {
+      "categoryName": "Namen"
+    },
+    "Tiere": {
+      "categoryName": "Tiere"
+    },
+    "none": {
+      "categoryName": "none"
+    }
+  }
+}
