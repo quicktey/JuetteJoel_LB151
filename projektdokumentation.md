@@ -91,41 +91,39 @@ Admin Views</br>
 
 # 6 Implementation
 
-✍️ Halten Sie fest, wann Sie welche User Story bearbeitet haben
-
-| User Story | Datum                   | Beschreibung |
-| ---------- | ----------------------- | ------------ |
-| 1          | 21.02.2023              |              |
-| 2          | 21.02.2023              |              |
-| 3          | 21.02.2023              |              |
-| 4          | 21.02.2023              |              |
-| 5          | 24.02.2023              |              |
-| 6          | 24.02.2023              |              |
-| 7          | 24.02.2023              |              |
-| 8          | 24.02.2023              |              |
-| 9          | 24.02.2023              |              |
-| 10         | 28.02.2023              |              |
-| 11         | 24.02.2023              |              |
-| 12         | 24.02.2023              |              |
-| A          | 12.01.2023 - 02.03.2023 |              |
+| User Story | Datum                   | Beschreibung                 |
+| ---------- | ----------------------- | ---------------------------- |
+| 1          | 21.02.2023              | Zu diesem Zeitpunkt erledigt |
+| 2          | 21.02.2023              | Zu diesem Zeitpunkt erledigt |
+| 3          | 21.02.2023              | Zu diesem Zeitpunkt erledigt |
+| 4          | 21.02.2023              | Zu diesem Zeitpunkt erledigt |
+| 5          | 24.02.2023              | Zu diesem Zeitpunkt erledigt |
+| 6          | 24.02.2023              | Zu diesem Zeitpunkt erledigt |
+| 7          | 24.02.2023              | Zu diesem Zeitpunkt erledigt |
+| 8          | 24.02.2023              | Zu diesem Zeitpunkt erledigt |
+| 9          | 24.02.2023              | Zu diesem Zeitpunkt erledigt |
+| 10         | 28.02.2023              | Zu diesem Zeitpunkt erledigt |
+| 11         | 24.02.2023              | Zu diesem Zeitpunkt erledigt |
+| 12         | 24.02.2023              | Zu diesem Zeitpunkt erledigt |
+| A          | 12.01.2023 - 02.03.2023 | Zu diesem Zeitpunkt erledigt |
 
 # 7 Projektdokumentation
 
-| US-№ | Erledigt? | Entsprechende Code-Dateien oder Erklärung                                     |
-| ---- | --------- | ----------------------------------------------------------------------------- |
-| 1    | ja        | Siehe Zeilen 41 bis 47 in der Datei: AdminLogin.razor                         |
-| 2    | ja        | Siehe Zeilen 128 bis 137 und 146 bis 160 in der Datei: AdminView.razor        |
-| 3    | ja        | Siehe Zeilen 120 bis 126 und 139 bis 144 in der Datei: AdminView.razor        |
-| 4    | ja        | Siehe Zeilen 162 bis 166 in der Datei: AdminView.razor                        |
-| 5    | ja        | Siehe Zeilen 123 bis 139 und 219 bis 228 in der Datei: GameView.razor         |
-| 6    | ja        | Siehe Zeile 50 in der Datei: GameView.razor                                   |
-| 7    | ja        | Siehe Zeile 51 in der Datei: GameView.razor                                   |
-| 8    | ja        | Siehe Zeile 210 und 214 in der Datei: GameView.razor                          |
-| 9    | ja        | Siehe Zeile 20, 24 und 49 bis 55 in der Datei: Scoreboard.razor               |
-| 10   | ja        | Siehe Zeile 160 in der Datei: GameView.razor                                  |
-| 11   | ja        | Siehe Zeile 53 und 219 bis 228 in der Datei: GameView.razor                   |
-| 12   | ja        | Siehe Zeile 52 in der Datei: GameView.razor                                   |
-| A    | ja        | Anhand des Codes kann man erkennen, dass ich .net MAUI Blazor verwendet habe. |
+| US-№ | Erledigt? | Entsprechende Code-Dateien oder Erklärung                                           |
+| ---- | --------- | ----------------------------------------------------------------------------------- |
+| 1    | ja        | Siehe Zeilen 41 bis 47 in der Datei: `Pages/AdminLogin.razor`                       |
+| 2    | ja        | Siehe Zeilen 128 bis 137 und 146 bis 160 in der Datei: `Pages/AdminView.razor`      |
+| 3    | ja        | Siehe Zeilen 120 bis 126 und 139 bis 144 in der Datei: `Pages/AdminView.razor`      |
+| 4    | ja        | Siehe Zeilen 162 bis 166 in der Datei: `Pages/AdminView.razor`                      |
+| 5    | ja        | Siehe Zeilen 123 bis 139 und 219 bis 228 in der Datei: `Pages/GameView.razor`       |
+| 6    | ja        | Siehe Zeile 50 in der Datei: `Pages/GameView.razor`                                 |
+| 7    | ja        | Siehe Zeile 51 in der Datei: `Pages/GameView.razor`                                 |
+| 8    | ja        | Siehe Zeile 210 und 214 in der Datei: `Pages/GameView.razor`                        |
+| 9    | ja        | Siehe Zeile 20, 24 und 49 bis 55 in der Datei: `Pages/Scoreboard.razor`             |
+| 10   | ja        | Siehe Zeile 160 in der Datei: `Pages/GameView.razor`                                |
+| 11   | ja        | Siehe Zeile 53 und 219 bis 228 in der Datei: `Pages/GameView.razor`                 |
+| 12   | ja        | Siehe Zeile 52 in der Datei: `Pages/GameView.razor`                                 |
+| A    | ja        | Anhand des Codes kann man erkennen, dass ich .net MAUI Blazor verwendet habe.       |
 
 # 8 Testprotokoll
 
