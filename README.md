@@ -3,9 +3,9 @@ Voraussetzungen, damit alles funktioniert:
 - [ ] Internetverbindung
 - [ ] Visual Studio installiert
 
-Als Erstes muss das Projekt von GitHub herunterladen. Sobald dies erledigt ist, müssen alle Zip-Dateien extrahiert werden. 
+Als Erstes muss das Projekt von GitHub heruntergeladen werden. Sobald dies erledigt ist, müssen alle Zip-Dateien extrahiert werden. 
 Als Nächstes muss die JuetteJoelLB_151.sln Datei doppelt angeklickt werden. Darauf öffnet sich in Visual Studio das Projekt.
-Hier kann nun oben in Header die App als "Windows Machine" gestartet werden.
+Hier kann nun oben im Header die App als `Windows Machine` gestartet werden.
 ![VisualStudioHeader](https://user-images.githubusercontent.com/69578012/222435667-7e52b2f5-b6c7-4618-a4ff-19df23244eed.png)
 
 Um die Datenbank muss sich nicht gekümmert werden. Sie ist Online und muss nicht vorher aufgesetzt oder eingefügt werden. Die .json Dateien sind im Repository im Ordner `JSON files` zu finden.
