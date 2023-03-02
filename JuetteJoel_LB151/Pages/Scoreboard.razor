@@ -1,0 +1,56 @@
+﻿@page "/scoreboard"
+@inject NavigationManager navigationManager
+@using JuetteJoel_LB151.Data
+@using JuetteJoel_LB151.Data.Firebase
+@inject FirebaseScoreboard firebaseScoreboard
+
+<div id="header" class="row m-auto">
+    <div class="col-auto align-self-center">
+        <a href="/">Spiel</a>
+    </div>
+    <div class="col-auto align-self-center">
+        <a href="/scoreboard">Scoreboard</a>
+    </div>
+</div>
+
+<div class="container">
+    <h3>Highscore-Liste</h3>
+    @foreach (ScoreboardEntry iterate in scoreboard)
+    {
+        rank++;
+        <div class="word-list-item">
+            <div class="row">
+                <div id="scoreboard-entry-name" class="col-auto align-self-center">
+                    @rank. @iterate.playerName
+                </div>
+                <div id="scoreboard-entry-score" class="col-auto align-self-center">
+                    @iterate.score
+                </div>
+                <div class="col align-self-center">
+                    @iterate.playedRounds
+                </div>
+                <div class="col-auto align-self-center">
+                    @iterate.dateTime
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    private List<ScoreboardEntry> scoreboard = new List<ScoreboardEntry>();
+    private int rank = 0;
+
+    protected override void OnInitialized()
+    {
+        loadScoreboardData();
+    }
+
+    private async void loadScoreboardData()
+    {
+        rank = 0;
+        scoreboard = await firebaseScoreboard.getScoreboardEntries();
+        scoreboard.Sort((entry1, entry2) => entry2.score.CompareTo(entry1.score));
+        StateHasChanged();
+    }
+}
